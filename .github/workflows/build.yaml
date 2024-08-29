@@ -1,3 +1,5 @@
+name: Zola on GitHub Pages
+
 env:
   ZOLA_VERSION: "0.16.1"
   SOURCE_BRANCH: "main"
@@ -17,6 +19,8 @@ jobs:
     steps:
     - name: Check out repo
       uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'  # Add this line to checkout submodules
     - name: Install zola
       run: |
         set -x
